@@ -1,3 +1,10 @@
+# # Request admin privileges at the start
+# if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+#     Write-Host "Restarting script as administrator..."
+#     Start-Process powershell "-NoExit -File `"$PSCommandPath`"" -Verb RunAs
+#     exit
+# }
+
 $currentPolicy = Get-ExecutionPolicy -Scope CurrentUser
 Write-Host "Current Execution Policy: $currentPolicy"
 Write-Host "Select the Execution Policy you want to set:"
