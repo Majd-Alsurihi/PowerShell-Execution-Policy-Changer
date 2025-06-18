@@ -6,7 +6,7 @@ net session >nul 2>&1
 if %errorlevel% neq 0 (
     echo Requesting administrator privileges...
     powershell -Command "Start-Process '%~f0' -Verb RunAs"
-    exit /b
+    exit /b11
 )
 
 powershell -NoExit -ExecutionPolicy Bypass -File "%~dp0PowerShell Execution Policy Changer.ps1"
